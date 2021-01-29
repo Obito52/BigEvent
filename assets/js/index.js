@@ -1,4 +1,3 @@
-$(function () {
 //从layui中提取
     const {layer}=layui
 
@@ -38,4 +37,3 @@ $(function () {
           //2.跳转到登录页
         location.href='../home/login.html'
     })
-})

@@ -1,13 +1,12 @@
 $(function () {
 //从layui中提取form表单模块
-    // var form = layui.form
-    const { form, layer}= layui                                                                                                   
+    // var form = layui.form                                           
 
     //1.点击链接切换表单
     $('.link a').click(function () {
         $('.layui-form').toggle()
     })
-
+    const { form, layer } = layui;    
     //2.校验表单项
     form.verify({
         pass: [
@@ -47,7 +46,7 @@ $('.login-form').submit(function (e) {
         .then(res => {
             console.log(res);
             //校验请求失败
-            if (res.status!==0) return layer.msy('登陆失败')
+            if (res.status!==0) return layer.msg('登陆失败')
       
             //登陆成功后 首先把token（个人身份凭证，令牌）保存本地存储
             localStorage.setItem('token', res.token)
@@ -56,6 +55,6 @@ $('.login-form').submit(function (e) {
             layer.msg('登陆成功')
 
             //跳转
-            location.href='#'
+            location.href='./index.html'
     })
 })

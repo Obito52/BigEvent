@@ -2,7 +2,7 @@ axios.defaults.baseURL = 'http://api-breakingnews-web.itheima.net'
 
 // 添加全局请求拦截器
 axios.interceptors.request.use(function (config) {
-  console.log('--发送 ajax 请求前', config);
+  // console.log('--发送 ajax 请求前', config);
   
     // 在发送请求之前做些什么
   
@@ -14,7 +14,7 @@ axios.interceptors.request.use(function (config) {
 //   3.indexOf('/my')==0
 
 
-  console.log(config.url);
+  // console.log(config.url);
     //获取本地存储的令牌
   var token = localStorage.getItem('token') || ''
   if (config.url.indexOf('/my')==0) {
@@ -30,7 +30,7 @@ axios.interceptors.request.use(function (config) {
 
 // 添加全局响应拦截器
 axios.interceptors.response.use(function (response) {
-  console.log('--接收 ajax 响应前', response);
+  // console.log('--接收 ajax 响应前', response);
   
   const { status, message } = response.data;
 
